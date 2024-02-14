@@ -1,0 +1,103 @@
+@use 'responsive';
+
+:root {
+    
+    --font-sans: 'Inter', sans-serif;
+    --font-serif: 'Georgia', serif;
+
+    --font-size: 16px;
+    --font-scale: 1.25;
+
+    --font-size-1: var(--font-size);
+    --font-size-2: calc( var(--font-size-1) * var(--font-scale));
+    --font-size-3: calc( var(--font-size-2) * var(--font-scale));
+    --font-size-4: calc( var(--font-size-3) * var(--font-scale));
+    --font-size-5: calc( var(--font-size-4) * var(--font-scale));
+    --font-size-6: calc( var(--font-size-5) * var(--font-scale));
+    --font-size-small: calc( var(--font-size-1) / 1.15);
+
+    --color-opacity: 1;
+
+    --line-height: 1.75;
+    
+    --color-text-dark-300: rgba(112 130 145/var(--color-opacity, 1));
+    --color-text-dark: rgba(148 163 184/var(--color-opacity, 1));
+    --color-text-dark-500: rgba(193 198 219/var(--color-opacity, 1));
+
+    --color-gray: rgba(30 41 59 /1);
+
+    --color-primary-100: #fff;
+    --color-primary-200: #fff;
+    --color-primary-300: #fff;
+    --color-primary-400: #fff;
+    --color-primary-500: #fff;
+    --color-primary-600: #fff;
+    --color-primary-700: #fff;
+    --color-primary-800: #fff;
+
+    --color-secondary-100: hsl(222, 47%, 5%);
+    --color-secondary-200: hsl(222, 47%, 7%);
+    --color-secondary-300: hsl(222, 47%, 9%);
+    --color-secondary-400: rgba(15 23 42/var(--color-opacity, 1));
+    --color-secondary-500: hsl(222, 47%, 15%);
+    --color-secondary-600: hsl(222, 47%, 25%);
+    --color-secondary-700: hsl(222, 47%, 40%);
+    --color-secondary-800: hsl(222, 47%, 50%);
+
+    --color-accent-100: hsl(198, 93%, 20%);
+    --color-accent-200: hsl(198, 93%, 30%);
+    --color-accent-300: hsl(198, 93%, 40%);
+    --color-accent-400: rgba(56 189 248 / var(--color-opacity, 1));
+    --color-accent-500: hsl(198, 93%, 70%);
+    --color-accent-600: hsl(198, 93%, 80%);
+    --color-accent-700: hsl(198, 93%, 90%);
+    --color-accent-800: hsl(198, 93%, 95%);
+
+    --border-radius: 5px;
+
+    --padding-content: 2rem;
+
+    --section-gap: 5rem;
+    --section-gap-inner: 3rem;
+    --gap-content: 2rem;
+    --gap-large: 1rem;
+    --gap-medium: 0.75rem;
+    --gap-small: 0.5rem;
+
+    --inner-width: 90rem;
+    /* bbehövs ej nog --page-gutter: 32px; /*för att kunna ändra i grid container om man vill!*/
+
+    --grid-container: [full-start] minmax(32px, 1fr) [inner-start] minmax(0, var(--inner-width)) [inner-end] minmax(32px, 1fr) [full-end];
+
+    @include responsive.max(1024px) {
+        --grid-container: [full-start] minmax(16px, 1fr) [inner-start] minmax(0, var(--inner-width)) [inner-end] minmax(16px, 1fr) [full-end];
+
+    }
+
+    @media (prefers-color-scheme: light) {
+        --color-text-dark-300: rgba(12 30 45/var(--color-opacity, 1));
+        --color-text-dark: rgba(48 63 84/var(--color-opacity, 1));
+        --color-text-dark-500: rgba(93 98 19/var(--color-opacity, 1));
+    
+        --color-gray: rgba(230 241 259 /1);
+    
+        --color-secondary-100: #fff;
+        --color-secondary-200: #fff;
+        --color-secondary-300: #fff;
+        --color-secondary-400: #fff;
+        --color-secondary-500: #fff;
+        --color-secondary-600: #fff;
+        --color-secondary-700: #fff;
+        --color-secondary-800: #fff;
+    
+        --color-primary-100: hsl(222, 47%, 5%);
+        --color-primary-200: hsl(222, 47%, 7%);
+        --color-primary-300: hsl(222, 47%, 9%);
+        --color-primary-400: rgba(15 23 42/var(--color-opacity, 1));
+        --color-primary-500: hsl(222, 47%, 15%);
+        --color-primary-600: hsl(222, 47%, 25%);
+        --color-primary-700: hsl(222, 47%, 40%);
+        --color-primary-800: hsl(222, 47%, 50%);
+    }
+
+}

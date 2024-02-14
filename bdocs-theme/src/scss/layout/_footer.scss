@@ -1,0 +1,43 @@
+@use '../utilities/responsive';
+
+.site-footer {
+    margin: 0 32px; // Dessa två kombineras
+    padding: var(--section-gap-inner) 0; // Dessa två kombineras för att strecket vill vi ha där texten börjar
+    border-top: 1px solid rgba(255 255 255 / 10%);
+    color: var(--color-text-dark-300);
+    display: flex;
+    gap: var(--gap-large);
+    flex-wrap: wrap;
+
+    a {
+        color: var(--color-text-dark-300);
+        text-decoration: none;
+
+        &:hover {
+            color: var(--color-text-dark);
+        }
+    }
+
+    &__trademark {
+        padding-left: var(--gap-large);
+        border-left: 1px solid rgba(255 255 255 / 7%);
+    }
+
+    &__edit {
+        margin-left: auto;
+    }
+
+    @include responsive.max(768px) {
+        flex-direction: column;
+
+        &__trademark {
+            border: 0;
+            padding: 0;
+            margin-bottom: var(--gap-large);
+        }
+
+        &__edit {
+            margin-left: 0;
+        }
+    }
+}

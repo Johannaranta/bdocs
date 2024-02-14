@@ -1,0 +1,23 @@
+@use '../utilities/responsive';
+
+.site-content {
+    display: grid;
+    padding-left: 19rem;
+    margin-top: 60px;
+    //grid-template-columns: 19rem [main-start] 1fr [main-end];
+
+    @include responsive.max(1024px) {
+        padding-left: 0;
+        margin: 120px auto 0;
+        max-width: 48rem;
+    }
+}
+
+.main-content {
+    padding: var(--section-gap-inner) 32px;
+    //grid-column: main;
+
+    @include responsive.max(1024px) {
+        padding: var(--section-gap-inner) 24px; //liknande vad man har på header
+    }
+}

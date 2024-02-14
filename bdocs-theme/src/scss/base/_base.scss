@@ -1,0 +1,86 @@
+@use '../utilities/custom-properties';
+
+html, body {
+    font-family: var(--font-sans);
+    font-size: var(--font-size);
+}
+
+body {
+    background-color: var(--color-secondary-400);
+
+    &.menu-opened {
+        height: 100vh;
+        overflow: hidden;
+    }
+}
+
+// gjorde nog tvärtom då jag har ljust tema!
+body.theme-light {
+
+    --color-text-dark-300: rgba(12 30 45/var(--color-opacity, 1));
+    --color-text-dark: rgba(48 63 84/var(--color-opacity, 1));
+    --color-text-dark-500: rgba(93 98 19/var(--color-opacity, 1));
+
+    --color-gray: rgba(230 241 259 /1);
+
+    --color-secondary-100: #fff;
+    --color-secondary-200: #fff;
+    --color-secondary-300: #fff;
+    --color-secondary-400: #fff;
+    --color-secondary-500: #fff;
+    --color-secondary-600: #fff;
+    --color-secondary-700: #fff;
+    --color-secondary-800: #fff;
+
+    --color-primary-100: hsl(222, 47%, 5%);
+    --color-primary-200: hsl(222, 47%, 7%);
+    --color-primary-300: hsl(222, 47%, 9%);
+    --color-primary-400: rgba(15 23 42/var(--color-opacity, 1));
+    --color-primary-500: hsl(222, 47%, 15%);
+    --color-primary-600: hsl(222, 47%, 25%);
+    --color-primary-700: hsl(222, 47%, 40%);
+    --color-primary-800: hsl(222, 47%, 50%);
+}
+
+body.theme-dark {
+        
+    --color-text-dark-300: rgba(112 130 145/var(--color-opacity, 1));
+    --color-text-dark: rgba(148 163 184/var(--color-opacity, 1));
+    --color-text-dark-500: rgba(193 198 219/var(--color-opacity, 1));
+
+    --color-gray: rgba(30 41 59 /1);
+
+    --color-primary-100: #fff;
+    --color-primary-200: #fff;
+    --color-primary-300: #fff;
+    --color-primary-400: #fff;
+    --color-primary-500: #fff;
+    --color-primary-600: #fff;
+    --color-primary-700: #fff;
+    --color-primary-800: #fff;
+
+    --color-secondary-100: hsl(222, 47%, 5%);
+    --color-secondary-200: hsl(222, 47%, 7%);
+    --color-secondary-300: hsl(222, 47%, 9%);
+    --color-secondary-400: rgba(15 23 42/var(--color-opacity, 1));
+    --color-secondary-500: hsl(222, 47%, 15%);
+    --color-secondary-600: hsl(222, 47%, 25%);
+    --color-secondary-700: hsl(222, 47%, 40%);
+    --color-secondary-800: hsl(222, 47%, 50%);
+}
+
+.overlay {
+    --color-opacity: 0.7;
+    --color-secondary-400: rgba(15 23 42/var(--color-opacity, 1));
+    
+    position: fixed;
+    inset: 0;
+    z-index: 998;
+    display: none;
+    backdrop-filter: blur(5px);
+    background-color: var(--color-secondary-400);
+
+    &--open {
+        display: block;
+    }
+}

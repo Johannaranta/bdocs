@@ -1,0 +1,8 @@
+@mixin default($col: inner) {
+    display: grid;
+    grid-template-columns: var(--grid-container);
+    
+    &__inner {
+        grid-column: $col;
+    }
+}

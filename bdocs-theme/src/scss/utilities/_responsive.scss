@@ -1,0 +1,23 @@
+//  Responsive when screen is max
+// Usage (hur man använder det):
+// @include responsive.max(600px) { ... }
+
+@mixin max($width: 480px) {
+
+    @media screen and ( max-width: $width ) {
+        @content;
+    }
+
+}
+
+//Tror man kan göra tvärtom? att jobba från det andra hållet min 480 och max 1440?
+//  Responsive when screen is max
+// Usage (hur man använder det):
+// @include responsive.min(600px) { ... }
+@mixin min($width: 1440px) {
+
+    @media screen and ( min-width: $width ) {
+        @content;
+    }
+
+}

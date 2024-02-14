@@ -1,0 +1,250 @@
+@use 'layout';
+@use '../utilities/responsive';
+
+.site-header {
+    @include layout.default;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255 255 255 / 10%);
+    height: 60px;
+    backdrop-filter: blur(10px);
+    transition: background-color 0.4s;
+
+    &--scroll {
+        --color-opacity: 0.7;
+        --color-secondary-400: rgba(15 23 42/var(--color-opacity, 1));
+        background-color: var(--color-secondary-400);
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+
+        @include responsive.max(1024px) {
+            justify-content: space-between;
+        }
+    }
+
+    &__branding {
+        color: var(--color-primary-400);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: var(--font-size-2);
+        display: flex;
+        align-items: center;
+        gap: var(--gap-small);
+
+        svg {
+            width: 32px;
+            stroke: var(--color-accent-400);
+        }
+    }
+
+    &__toolbar {
+        display: flex;
+        align-items: center;
+        gap: var(--gap-large);
+        margin-left: 3rem;
+    }
+
+    &__search-button {
+        display: none;
+        background: none;
+        border: 0;
+
+        svg {
+            width: 1.25rem;
+            stroke: var(--color-text-dark);
+        }
+
+        @include responsive.max(1024px) {
+            display: block;
+        }
+    }
+    
+    .menu {
+        margin-left: auto;
+    }
+
+    &__responsive {
+        grid-row: 2;
+        grid-column: full;
+        padding: 0 16px;
+        height: 60px;
+        display: none;
+        align-items: center;
+        gap: var(--gap-large);
+        border-top: 1px solid rgba(255 255 255 / 10%);
+    }
+
+    @include responsive.max(1024px) {
+        height: auto;
+
+        &__inner {
+            height: 60px;
+        }
+
+        &__responsive {
+            display: flex;
+        }
+    }
+}
+
+.darkmode {
+    position: relative;
+
+    &__button {
+        background: none;
+        border: 0;
+        
+        svg {
+            width: 1.25rem;
+            stroke: var(--color-text-dark);
+        }
+
+        &--active svg {
+            stroke: var(--color-accent-400);
+        }
+    }
+
+    &__list {
+        display: none;
+        border-radius: var(--border-radius);
+        border-top: 1px solid rgba(255 255 255 / 10%);
+        background-color: var(--color-gray);
+        margin: 0;
+        padding: 0.5rem 0;
+        list-style: none;
+        position: absolute;
+        width: 9rem;
+        flex-direction: column;
+        top: 60px;
+        right: -50px;
+        
+        &--visible {
+            display: flex;
+        }
+    }
+
+    &__item {
+
+        &:hover {
+            background-color: rgba(255 255 255 / 10%);
+        }
+
+        &--active {
+            button {
+                color: var(--color-accent-400);
+                svg {
+                    stroke: var(--color-accent-400);
+                }
+            }
+
+        }
+    }
+
+    &__theme {
+        background: none;
+        padding: 0.4rem 0.8rem;
+        border: 0;
+        color: var(--color-primary-400);
+        display: flex;
+        gap: var(--gap-small);
+        align-items: center;
+        font-family: var(--font-sans);
+        font-size: var(--font-size-small);
+        font-weight: 600;
+        cursor: pointer;
+        
+        svg {
+            stroke: var(--color-text-dark);
+            width: 1.25rem;
+        }
+    }
+
+    @include responsive.max(1024px) {
+        display: none;
+    }
+}
+
+.social {
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    &__item {
+        line-height: 1;
+    }
+
+    &__link {
+        line-height: 1;
+       
+        svg {
+            width: 1.25rem;
+            fill: var(--color-text-dark);
+        }
+    }
+
+    @include responsive.max(1024px) {
+        display: none;
+    }
+}
+
+.menu-button {
+    display: none;
+    background: none;
+    border: 0;
+
+    svg {
+        height: 1.6rem;
+        stroke: var(--color-text-dark);
+    }
+
+    @include responsive.max(1024px) {
+        display: block;
+    }
+
+}
+
+.sidebar-button {
+    border: 0;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    
+    svg {
+        width: 1.6rem;
+        stroke: var(--color-text-dark);
+    }
+
+    &:hover {
+        svg {
+            stroke: var(--color-primary-400);
+        }
+    }
+}
+
+.breadcrumb {
+    font-size: var(--font-size-small);
+    color: var(--color-text-dark);
+    display: flex;
+    gap: var(--gap-medium);
+    
+    svg {
+        width: 1rem;
+        stroke: var(--color-text-dark);
+    }
+
+    span {
+        &:last-of-type {
+            color: var(--color-primary-400);
+        }
+    }
+}
